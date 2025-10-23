@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Button from "./Button";
 import { FiShoppingCart } from "react-icons/fi";
+import { CiMenuBurger } from "react-icons/ci";
 
 export default function Navbar() {
   return (
@@ -9,7 +10,7 @@ export default function Navbar() {
         <h2 className='text-2xl font-archivo'>
           <Link href='/'>VITREOUS</Link>
         </h2>
-        <ul className='flex flex-row gap-20 justify-center items-center text-sm'>
+        <ul className='hidden lg:flex flex-row gap-20 justify-center items-center text-sm'>
           <li>
             <Link href='/'>
               Services
@@ -21,7 +22,7 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-        <ul className='flex flex-row gap-4 justify-center items-center text-sm'>
+        <ul className='hidden lg:flex flex-row gap-4 justify-center items-center text-sm'>
           <li>
             <Button type="navigation" label="Cart" href="/" icon={<FiShoppingCart />} className="bg-java" />
           </li>
@@ -32,6 +33,9 @@ export default function Navbar() {
             <Button type="navigation" label="Login" href="/" />
           </li>
         </ul>
+        <button className="block lg:hidden">
+          <CiMenuBurger />
+        </button>
       </div>
     </nav>
   );
